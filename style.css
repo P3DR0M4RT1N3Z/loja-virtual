@@ -1,0 +1,527 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+
+.navbar{ 
+    background-color: rgb(54, 54, 54);
+    padding: 16px;
+    position: flex;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbar li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    margin-right: 50px;
+}
+
+.conteudo {
+    flex: 1;
+    padding: 32px;
+}
+
+.produtos{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
+    gap: 32px;
+}
+
+.produto{
+    border: 1px solid #ddd;
+    padding: 16px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    background-color: rgb(230, 228, 228);
+    border-radius: 10px;
+    
+}
+
+.produto:hover{
+    transform: scale(1.05);
+}
+
+.produto img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.whatsapp-button{
+    position: fixed;
+    bottom: 65px;
+    right: 20px;
+    background-color: rgb(8, 193, 8);
+    color: #ddd;
+    padding: 16px;
+    border-radius: 50%;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition:  transform 0.3s ease;
+    z-index: 1300;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+}
+
+.rodape {
+    background-color: #333;
+    color: bisque;
+    text-align: center;
+    padding: 0;
+}
+
+.saiba-mais{
+    background-color: #4caf50;
+    border: none;
+    color: #ddd;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+}
+
+.saiba-mais:hover{
+    background-color: #45a049;
+}
+
+/* Estilo do menu sanduíche */
+.menu-sanduiche {
+    position: relative;
+}
+
+.menu-toggle {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute; /* Use position absolute para posicionamento dentro do cabeçalho */
+    top: 50%; /* Centraliza verticalmente */
+    left: 16px; /* Mantém o botão à esquerda */
+    transform: translateY(-50%); /* Ajusta para centralizar exatamente no meio */
+    z-index: 1100;
+}
+
+/* Menu lateral */
+.menu {
+    position: fixed;
+    top: 0;
+    left: -16.66%; /* Escondido fora da tela (1/6 da largura) */
+    width: 16.66%; /* 1/6 da tela */
+    height: 100%;
+    background-color: #fff;
+    border-right: 1px solid #ccc;
+    z-index: 1000;
+    overflow-y: auto;
+    transition: transform 0.5s ease, box-shadow 0.3s ease; /* Transição suave para sombra */
+    transform: translateX(-100%); /* Escondido fora da tela */
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.menu-close {
+    font-size: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    text-align: left;
+    color: #007BFF;
+}
+
+.menu-content h2 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    color: #333;
+    margin-top: 20%;
+    margin-bottom: 10%; /* Espaço abaixo do título */
+}
+
+.menu-content li {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between; /* Organiza os itens e preços */
+}
+
+
+.menu-content li a {
+    margin: 5px 0px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #000000;
+    list-style: none;
+    display: flex;
+    flex-direction: column; /* Organiza os itens em coluna */
+}
+
+/* Mostrar o menu quando ativo */
+.menu.active {
+    transform: translateX(0); /* Move o menu para dentro da tela */
+    box-shadow: 40% 100px 10% rgba(0, 0, 0, 0.2); /* Adiciona uma sombra ao menu */
+}
+
+/* Cabeçalho do site */
+.site-header {
+    background-color: #333; /* Cor escura */
+    color: #fff;
+    height: 60px; /* Altura do cabeçalho */
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1200;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Ícone do menu sanduíche */
+.menu-toggle {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff; /* Cor branca no cabeçalho */
+    position: absolute;
+    top: 50%; /* Centraliza verticalmente no cabeçalho */
+    left: 16px; /* Alinha à esquerda */
+    transform: translateY(-50%); /* Ajusta para centralizar exatamente no meio */
+}
+
+/* Ícone do menu sanduíche quando o menu está ativo */
+.menu.active + .menu-toggle {
+    color: #000; /* Cor preta quando o menu está aberto */
+}
+
+/* Menu lateral */
+.menu {
+    position: fixed;
+    top: 0;
+    left: -16.66%; /* Escondido fora da tela (1/6 da largura) */
+    width: 16.66%; /* 1/6 da tela */
+    height: 100%;
+    background-color: #fff;
+    border-right: 1px solid #ccc;
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1);
+    z-index: 1022;
+    overflow-y: auto;
+    transition: left 0.5s ease; /* Animação suave */
+    display: none; /* Escondido por padrão */
+    flex-direction: column;
+    padding: 20px;
+}
+
+/* Mostrar o menu quando ativo */
+.menu.active {
+    display: flex; /* Exibe o menu */
+    left: 0; /* Puxa o menu para dentro da tela */
+}
+
+/* Botão do carrinho no cabeçalho */
+.carrinho {
+    position: absolute;
+    top: 50%;
+    right: 48px;
+    transform: translateY(-50%); 
+    z-index: 1100;
+}
+
+.carrinho-toggle {
+    font-size: 24px; 
+    background: none; 
+    border: none; 
+    cursor: pointer; 
+    color: #fff; /* Cor branca no cabeçalho */
+    transition: color 0.3s ease; /* Transição suave para a cor */
+
+}
+
+/* Mini página do carrinho */
+.carrinho-menu {
+    position: fixed;
+    top: 0;
+    right: -16.66%; /* Escondido fora da tela (1/6 da largura) */
+    width: 16.66%; /* Largura do carrinho */
+    height: 100%; 
+    background-color: #fff;
+    border-left: 1px solid #ccc;
+    box-shadow: -2px 0 6px rgba(0, 0, 0, 0.1); /* Sombra à esquerda */
+    z-index: 1001; 
+    overflow-y: auto; /* Permite rolagem se necessário */
+    transition: right 0.3s ease; /* Animação suave */
+    display: none; /* Escondido por padrão */
+    flex-direction: column; 
+    padding: 20px;  
+}
+
+.carrinho-menu.active {
+    display: inline-flex; /* Exibe o carrinho */
+    right: 0; /* Puxa o carrinho para dentro da tela */
+}
+
+.carrinho-close {
+    font-size: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    text-align: right;
+    color: #007BFF;
+}
+
+.carrinho-content h2 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    color: #333;
+    margin-top: 14%; /* Espaço acima do título */
+    margin-bottom: 10%; /* Espaço abaixo do título */
+}
+
+.adicionar-carrinho {
+    background-color: #4caf50; /* Cor verde */
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.3s ease; /* Transição suave para a cor */
+}
+
+.carrinho-itens {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.carrinho-itens li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #555;
+    display: flex;
+    justify-content: space-between; /* Organiza os itens e preços */
+}
+
+/* Botão de apagar item do carrinho */
+.carrinho-itens li button {
+    background-color: #ff4d4d; /* Cor vermelha */
+    border: none;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.carrinho-itens li button:hover {
+    background-color: #e60000; /* Cor mais escura ao passar o mouse */
+}
+
+.carrinho-total {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    text-align: right;
+}
+
+/* Notificação do carrinho */
+.carrinho-notificacao {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #4caf50; /* Cor verde */
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    opacity: 0; /* Inicialmente invisível */
+    transform: translateY(-10px); /* Posição inicial para animação */
+    transition: opacity 0.2s ease, transform 0.2s ease; /* Animação suave */
+    pointer-events: none; /* Impede interação com a notificação */
+    z-index: 1100;
+}
+
+.carrinho-notificacao.mostrar {
+    opacity: 1; /* Torna visível */
+    transform: translateY(0); /* Move para a posição final */
+}
+
+/* Estilo do carrossel */
+.carrossel {
+    position: relative;
+    width: 100%; /* Ocupa toda a largura da tela */
+    height: 33vh; /* Ocupa 1/6 da altura da tela */
+    margin: 20px auto;
+    overflow: hidden;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.carrossel-imagens {
+    display: flex;
+    transition: transform 1s ease-in-out; /* Animação suave ao mover os banners */
+    height: 100%; /* Garante que as imagens ocupem toda a altura do carrossel */
+}
+
+.carrossel-item {
+    width: 100%; /* Cada imagem ocupa 100% da largura do carrossel */
+    height: 100%; /* Cada imagem ocupa 100% da altura do carrossel */
+    object-fit: cover; /* Ajusta a imagem para cobrir o espaço sem distorção */
+    flex-shrink: 0; /* Garante que as imagens não encolham */
+    display: none; /* Esconde todas as imagens por padrão */
+}
+
+.carrossel-item.ativo {
+    display: block; /* Exibe apenas a imagem ativa */
+}
+
+.carrossel-prev,
+.carrossel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 999;
+}
+
+.carrossel-prev {
+    left: 10px;
+}
+
+.carrossel-next {
+    right: 10px;
+}
+
+.carrossel-prev:hover,
+.carrossel-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Estilo do pop-up */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 90%;
+}
+
+.popup-content h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.popup-content p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.popup-content .discount {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+.popup-content .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.popup-content .btn:hover {
+    background-color: #2980b9;
+}
+
+.close-popup {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.close-popup:hover {
+    background-color: #c0392b;
+}
+
+.popup.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+

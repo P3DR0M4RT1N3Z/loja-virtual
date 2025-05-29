@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Virtual</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="menu.js"></script> <!-- Adicione um script para funcionalidade -->
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="menu-sanduiche">
+            <button class="menu-toggle" aria-label="Abrir menu">
+                &#9776; <!-- Ícone de hambúrguer -->
+            </button>
+        </div>
+        <div class="carrinho">
+            <button class="carrinho-toggle" aria-label="Abrir carrinho">
+                🛒 <!-- Ícone de carrinho -->
+            </button>
+            <div class="carrinho-notificacao" id="carrinhoNotificacao"></div>
+        </div>
+    </header>
+
+    <!-- Mini página do carrinho -->
+    <div class="carrinho-menu">
+        <button class="carrinho-close" aria-label="Fechar carrinho">&rarr; Fechar</button>
+        <div class="carrinho-content">
+            <h2>Seu Carrinho:</h2>
+            <ul class="carrinho-itens">
+                <!-- Os itens adicionados ao carrinho aparecerão aqui -->
+            </ul>
+            <p class="carrinho-total">Total: R$ 0,00</p>
+        </div>
+    </div>
+
+    <div class="navbar">
+        <div class="menu-sanduiche">
+            <button class="menu-toggle" aria-label="Abrir menu">
+                &#9776; <!-- Ícone de hambúrguer -->
+            </button>
+            <nav class="menu">
+                <button class="menu-close" aria-label="Fechar menu"></button>
+                <div class="menu-content">
+                    <!-- Conteúdo da mini página -->
+                    <h2>Bem-vindo ao Menu</h2>
+                    
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                   
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="conteudo">
+        <h1>Bem-vindo à nossa Loja Virtual</h1>
+        <p>Descubra nossa ampla variedade de produtos incríveis</p>
+        
+        <div class="carrossel">
+            <button class="carrossel-prev" aria-label="Imagem anterior">&#10094;</button>
+            <div class="carrossel-imagens">
+                <img src="./img/banner1.png" alt="Banner 1" class="carrossel-item ativo">
+                <img src="./img/camera.jpg" alt="Banner 2" class="carrossel-item">
+                <img src="./img/headset.jpg" alt="Banner 3" class="carrossel-item">
+                <img src="./img/banner1.png" alt="Banner 4" class="carrossel-item">
+                <img src="./img/banner1.png" alt="Banner 5" class="carrossel-item">
+                <img src="./img/banner1.png" alt="Banner 6" class="carrossel-item">
+            </div>
+            <button class="carrossel-next" aria-label="Próxima imagem">&#10095;</button>
+        </div>
+
+        <div class="produtos">
+            <div class="produto">
+                <img src="./img/smart-watch.jpg" alt="" width="200" height="200">
+                <h3>Smartwatch X1</h3>
+                <p>O relógio inteligente mais avançado do mercado.</p>
+                <p>Preço: R$ 599,99</p>
+                <button class="adicionar-carrinho" data-nome="Smartwatch X1" data-preco="599.99">Adicionar ao Carrinho</button>
+            </div>    
+            
+            <div class="produto">
+                <img src="./img/headset.jpg" alt="" width="200" height="200">
+                <h3>Headset Philco-Wave Flat</h3>
+                <p>Headset é ideal para você! Ótima qualidade de som para você curtir suas músicas de forma prática e fácil. </p>
+                <p>Preço: R$ 599,99</p>
+                <button class="adicionar-carrinho" data-nome="Headset Philco-Wave Flat" data-preco="599.99">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="produto">
+                <img src="./img/camera.jpg" alt="" width="200" height="200">
+                <h3>Câmera FHD</h3>
+                <p>A câmera mais tecnológica e com melhor resolução do mercado.</p>
+                <p>Preço: R$ 389,99</p>
+                <button class="adicionar-carrinho" data-nome="Câmera FHD" data-preco="389.99">Adicionar ao Carrinho</button>
+            </div>
+            
+            <div class="produto">
+                <img src="./img/console.jpg" alt="" width="200" height="200">
+                <h3>Console PS5</h3>
+                <p>Jogue mais de 8.500 jogos de PS4 nos consoles PS5.</p> 
+                <p>Preço: R$ 3.729,99</p>
+                <button class="adicionar-carrinho" data-nome="Console PS5" data-preco="3729.99">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="./img/drone.jpg" alt="" width="200" height="200">
+                <h3>Drone FPV com câmeras 4K Dual HD</h3>
+                <p>Controle multifuncional do smartphone, Controle de gestos e desenho de caminho.</p>
+                <p>Preço: R$ 278,00</p>
+                <button class="adicionar-carrinho" data-nome="Drone FPV com câmeras 4K Dual HD" data-preco="278.00">Adicionar ao Carrinho</button>
+            </div>
+            
+            <div class="produto">
+                <img src="./img/relogio.jpg" alt="" width="200" height="200">
+                <h3>Smartwatch Samsung Galaxy Fit3</h3>
+                <p>Monitoramento avançado de saúde, sono e de coração, tudo issona palma da sua mão</p>
+                <p>Preço: R$ 319,90</p>
+                <button class="adicionar-carrinho" data-nome="Smartwatch Samsung Galaxy Fit3" data-preco="319.90">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="produto">
+                <img src="./img/note.jpg" alt="" width="200" height="200">
+                <h3>Notebook Samsung Galaxy</h3>
+                <p>Conquiste os desafios do seu dia com a última geração dos processadores Intel Core i5 com gráficos Intel integrados</p>
+                <p>Preço: R$ 2.899,99</p>
+                <button class="adicionar-carrinho" data-nome="Notebook Samsung Galaxy" data-preco="2899.99">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="produto">
+                <img src="./img/tablet.jpg" alt="" width="200" height="200">
+                <h3>Tablet Samsung</h3>
+                <p>Monitoramento avançado de saúde, sono e de coração, tudo issona palma da sua mão</p>
+                <p>Preço: R$ 319,90</p>
+                <button class="adicionar-carrinho" data-nome="Tablet Samsung" data-preco="319.90">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+    </div>
+    <a href="https://wa.me/5511986166215?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos"
+        class="whatsapp-button" target="_blank" rel="noopener noreferrer">
+
+
+
+        <svg 
+        xmlns="http://www.w3.org/2000/svg" width=" 24" height="24" viewBox="0 0 24 24" fill="white">
+
+
+
+            <path d="M.057
+24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891
+11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48
+8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305
+1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434
+9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889
+9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941
+1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198
+0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198
+2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085
+1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+
+
+        </svg>
+
+    </a>
+
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <h1>Grande Promoção!</h1>
+        <p>Desconto especial em todos os produtos da nossa loja virtual.</p>
+        <p class="discount">Até 50% OFF!</p>
+        <p id="timer">Tempo restante: 20:00</p>
+        <a href="#" class="btn">Aproveite Agora</a>
+        <button class="close-popup" id="closePopup">Fechar</button>
+    </div>
+</div>
+
+<div class="rodape">
+    <p>&copy; 2024 Loja Virtual. Todos os direitos reservados.</p>
+</div>
+
+
+</body>
+
+</html>
